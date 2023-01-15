@@ -1,31 +1,34 @@
-import dark from '@/styles/themes/dark';
-import light from '@/styles/themes/light';
+import { dark } from '@/styles/themes/dark';
+import { light } from '@/styles/themes/light';
 import { createContext, useLayoutEffect, useState } from 'react';
 import { ThemeProvider } from 'styled-components';
 
-export const ContextTheme = createContext({});
+export const ContextTheme = createContext({
+  theme: light,
+  toggleTheme: () => {},
+});
 
-export function ContextThemeProvider({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+type ThemeProviderProps = { children: React.ReactNode };
+
+export function ContextThemeProvider({ children }: ThemeProviderProps) {
   const [theme, setTheme] = useState(light);
 
   useLayoutEffect(() => {
     const localTheme = localStorage.theme;
+    const userPrefersDark =
+      window.matchMedia('(prefers-color-scheme: dark)').matches && !localTheme;
 
-    if (
-      (!localTheme &&
-        window.matchMedia('(prefers-color-scheme: dark)').matches) ||
-      localTheme === 'dark'
-    ) {
+    if (userPrefersDark || localTheme === 'dark') {
       setTheme(dark);
     }
   }, []);
 
   const toggleTheme = () => {
-    setTheme(theme.title === 'light' ? dark : light);
+    const newTheme = theme.title === 'light' ? dark : light;
+    const newThemeTitle = theme.title === 'light' ? 'dark' : 'light';
+
+    setTheme(newTheme);
+    localStorage.setItem('theme', newThemeTitle);
   };
 
   return (

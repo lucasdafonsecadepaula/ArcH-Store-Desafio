@@ -1,13 +1,12 @@
-import Router from './router';
-import GlobalStyle from './styles/global';
+import { ContextThemeProvider } from './context/ThemeProvider';
+import { Router } from './router';
+import { GlobalStyle } from './styles/global';
 
-function App() {
+export function App() {
   return (
-    <>
+    <ContextThemeProvider>
       <GlobalStyle />
       <Router />
-    </>
+    </ContextThemeProvider>
   );
 }
-
-export default App;

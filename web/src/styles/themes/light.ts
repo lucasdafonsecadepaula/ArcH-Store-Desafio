@@ -1,10 +1,12 @@
-export default {
+export const light = {
   title: 'light',
   colors: {
-    primary: '#8ECCE5',
-    secondary: '#fff',
-    tertiary: '#8ECCE5',
-    background: '#E8E9EB',
-    text: '#333',
+    primary: '#3700B3',
+    secondary: '#03DAC6',
+    tertiary: '#eaeaea',
+    background: '#FFFFFF',
+    secondaryBackground: '#FFFFFF',
+    text: '#121212',
+    error: '#B00020',
   },
 };

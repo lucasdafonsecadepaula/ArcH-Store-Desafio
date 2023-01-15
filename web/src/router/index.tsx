@@ -1,5 +1,15 @@
-function Router() {
-  return <div>hello world</div>;
-}
+import { Home } from '@/pages/Home';
+import { NotFound } from '@/pages/NotFound';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
-export default Router;
+const routes = createBrowserRouter([
+  {
+    path: '/',
+    element: <Home />,
+    errorElement: <NotFound />,
+  },
+]);
+
+export function Router() {
+  return <RouterProvider router={routes} />;
+}
