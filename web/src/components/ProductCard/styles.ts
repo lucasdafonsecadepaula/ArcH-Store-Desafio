@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
+  background-color: ${({ theme }) => theme.colors.background};
   border-radius: 8px;
   width: 100%;
   max-width: 300px;
@@ -11,6 +12,7 @@ export const Container = styled.div`
 `;
 
 export const ImageWrapper = styled.div`
+  position: relative;
   img {
     border-radius: 8px;
     width: 100%;
@@ -19,9 +21,31 @@ export const ImageWrapper = styled.div`
     object-fit: cover;
     object-position: center;
   }
+
+  span {
+    cursor: pointer;
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 40px;
+    height: 40px;
+    fill: ${({ theme }) => theme.colors.text};
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid ${({ theme }) => theme.colors.text};
+    background-color: #fff;
+
+    svg {
+      width: 30px;
+      height: 30px;
+    }
+  }
 `;
 
 export const InfoWrapper = styled.div`
+  color: ${({ theme }) => theme.colors.text};
   margin: 0 8px;
   padding: 8px;
   display: flex;
@@ -37,21 +61,5 @@ export const InfoWrapper = styled.div`
   span {
     font-size: 1.2rem;
     font-weight: 600;
-  }
-`;
-
-export const AddToCardBtn = styled.button`
-  margin: 8px 16px;
-  align-self: flex-start;
-  transition: background-color 0.2s;
-  cursor: pointer;
-  padding: 0.5rem;
-  border-radius: 16px;
-  border: 1px solid ${({ theme }) => theme.colors.primary};
-  background-color: #fff;
-
-  &:hover {
-    background-color: ${({ theme }) => theme.colors.primary};
-    color: #fff;
   }
 `;

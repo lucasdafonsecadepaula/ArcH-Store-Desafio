@@ -3,7 +3,7 @@ import { light } from '@/styles/themes/light';
 import { createContext, useLayoutEffect, useState } from 'react';
 import { ThemeProvider } from 'styled-components';
 
-export const ContextTheme = createContext({
+export const ThemeContext = createContext({
   theme: light,
   toggleTheme: () => {},
 });
@@ -26,16 +26,15 @@ export function ContextThemeProvider({ children }: ThemeProviderProps) {
   const toggleTheme = () => {
     const newTheme = theme.title === 'light' ? dark : light;
     const newThemeTitle = theme.title === 'light' ? 'dark' : 'light';
-
     setTheme(newTheme);
     localStorage.setItem('theme', newThemeTitle);
   };
 
   return (
     <ThemeProvider theme={theme}>
-      <ContextTheme.Provider value={{ theme, toggleTheme }}>
+      <ThemeContext.Provider value={{ theme, toggleTheme }}>
         {children}
-      </ContextTheme.Provider>
+      </ThemeContext.Provider>
     </ThemeProvider>
   );
 }

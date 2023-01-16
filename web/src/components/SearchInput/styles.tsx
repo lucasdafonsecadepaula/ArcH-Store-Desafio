@@ -16,6 +16,7 @@ export const Container = styled.div`
   }
 
   svg {
+    cursor: pointer;
     position: absolute;
     right: 4px;
     top: 0;

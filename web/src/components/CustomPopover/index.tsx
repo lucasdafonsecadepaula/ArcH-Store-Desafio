@@ -4,13 +4,10 @@ import { Container, ListWrapper } from './styles';
 
 type CustomPopoverProps = {
   title: string;
-  list: {
-    title: string;
-    link: string;
-  }[];
+  children: React.ReactNode;
 };
 
-export function CustomPopover({ title, list }: CustomPopoverProps) {
+export function CustomPopover({ title, children }: CustomPopoverProps) {
   return (
     <Container>
       <Popover.Root>
@@ -22,13 +19,7 @@ export function CustomPopover({ title, list }: CustomPopoverProps) {
         </Popover.Trigger>
         <Popover.Portal>
           <Popover.Content sideOffset={5}>
-            <ListWrapper>
-              {list.map(({ title, link }) => (
-                <a key={link} href={link}>
-                  {title}
-                </a>
-              ))}
-            </ListWrapper>
+            <ListWrapper>{children}</ListWrapper>
             <Popover.Arrow />
           </Popover.Content>
         </Popover.Portal>

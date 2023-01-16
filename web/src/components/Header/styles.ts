@@ -12,7 +12,6 @@ export const Container = styled.header`
 export const Box = styled.div`
   width: 100%;
   display: flex;
-  /* justify-content: space-between; */
   align-items: center;
   max-width: 1400px;
 `;
@@ -28,10 +27,92 @@ export const LogoWrapper = styled.div`
   }
 `;
 
+export const ContentWrapper = styled.div`
+  display: flex;
+  gap: 1rem;
+  width: 100%;
+  align-items: center;
+  justify-content: flex-end;
+
+  @media (max-width: 768px) {
+    gap: 0;
+    .categories {
+      display: none;
+    }
+
+    .switch {
+      display: none;
+    }
+
+    .cart {
+      display: none;
+    }
+
+    .login {
+      display: none;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .menu {
+      display: none;
+    }
+  }
+`;
+
+export const CategoriesWrapper = styled.div`
+  margin-left: 0.5rem;
+  button {
+    display: flex;
+  }
+`;
+
 export const SearchWrapper = styled.div`
   width: 100%;
   padding: 0 1rem;
   max-width: 500px;
+`;
+
+export const SwitchWrapper = styled.div``;
+
+export const CartButton = styled.button`
+  cursor: pointer;
+  position: relative;
+  margin-left: 1rem;
+  background: transparent;
+  border: none;
+  margin-bottom: 2px;
+
+  svg {
+    fill: ${({ theme }) => theme.colors.text};
+  }
+
+  span {
+    color: #fff;
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background-color: ${({ theme }) => theme.colors.primary};
+    border-radius: 50%;
+    font-size: 1.2rem;
+    height: 1.5rem;
+    width: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+  }
+`;
+
+export const LoginButton = styled.div`
+  cursor: pointer;
+  margin-left: 1rem;
+
+  a {
+    color: ${({ theme }) => theme.colors.text};
+    font-size: 1.2rem;
+    text-decoration: none;
+  }
 `;
 
 export const MobileMenuWrapper = styled.div`
@@ -49,6 +130,7 @@ export const MobileMenuWrapper = styled.div`
   }
 
   nav {
+    z-index: 99;
     display: flex;
     background-color: ${({ theme }) => theme.colors.background};
     position: fixed;
@@ -71,6 +153,10 @@ export const MobileMenuWrapper = styled.div`
     list-style-type: none;
   }
 
+  li {
+    color: ${({ theme }) => theme.colors.text};
+  }
+
   a {
     border-radius: 8px;
     color: ${({ theme }) => theme.colors.text};
@@ -78,4 +164,14 @@ export const MobileMenuWrapper = styled.div`
     text-decoration: none;
     padding: 0.5rem;
   }
+`;
+
+export const Table = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+  margin-top: 1rem;
+
+  font-size: 0.8rem;
 `;

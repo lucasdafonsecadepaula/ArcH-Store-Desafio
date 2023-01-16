@@ -1,23 +1,37 @@
-import { Container } from './styles';
-
 import { SearchAlt2 as SearchIcon } from '@styled-icons/boxicons-regular';
+import { Container } from './styles';
 
 type SearchProps = {
   placeholder: string;
-  value: string;
+  value: string | number;
   onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  handleConfirm?: () => void;
+  type?: 'text' | 'number';
 };
 
-export function SearchInput({ placeholder, value, onChange }: SearchProps) {
+export function SearchInput({
+  placeholder,
+  value,
+  onChange,
+  handleConfirm,
+  type = 'text',
+}: SearchProps) {
+  const handleKeyUp = (event: React.KeyboardEvent<HTMLInputElement>) => {
+    if (event.code === 'Enter' && handleConfirm) {
+      handleConfirm();
+    }
+  };
+
   return (
     <Container>
       <input
-        type="text"
+        type={type}
         placeholder={placeholder}
         value={value}
         onChange={onChange}
+        onKeyUp={handleKeyUp}
       />
-      <SearchIcon />
+      {handleConfirm && <SearchIcon onClick={handleConfirm} />}
     </Container>
   );
 }

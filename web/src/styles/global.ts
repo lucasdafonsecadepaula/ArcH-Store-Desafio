@@ -15,4 +15,9 @@ export const GlobalStyle = createGlobalStyle`
         background-color: ${({ theme }) => theme.colors.background};
         /* color: ${({ theme }) => theme.colors.text}; */
     }
+
+    @media (max-width: 768px) {
+        body {
+        }
+    }
 `;

@@ -6,9 +6,11 @@ export function HeroSection() {
     <Container>
       <Box>
         <div>
-          <div className="test">
+          <div className="text">
             <h1>Melhor oferta de notebook</h1>
-            <button>Compre agora</button>
+            <a href="/laptops">
+              <button>Compre agora</button>
+            </a>
           </div>
           <img src={heroImg} />
         </div>

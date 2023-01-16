@@ -5,6 +5,7 @@ export const Container = styled.div`
     font-size: 1.2rem;
     background: inherit;
     border: 0;
+    color: ${({ theme }) => theme.colors.text};
   }
 
   button[data-state='open'] svg {
@@ -25,6 +26,6 @@ export const ListWrapper = styled.div`
     color: ${({ theme }) => theme.colors.text};
   }
   a:hover {
-    background: #eee;
+    background: ${({ theme }) => theme.colors.tertiary};
   }
 `;

@@ -16,19 +16,19 @@ export const Box = styled.div`
     justify-content: flex-end;
   }
 
-  .test {
+  .text {
     margin-right: 8px;
     color: #fff;
     text-align: end;
     padding: 1rem;
     display: flex;
     flex-direction: column;
-    z-index: 10;
+    z-index: 2;
     height: auto;
     border-radius: 10px;
   }
 
-  .test button {
+  .text button {
     cursor: pointer;
     padding: 1rem;
     font-size: 1.2rem;
@@ -37,6 +37,11 @@ export const Box = styled.div`
     border-radius: 8px;
     margin-top: 1rem;
     border: none;
+    transition: transform 0.2s ease-in-out;
+
+    &:hover {
+      transform: scale(1.05);
+    }
   }
 
   img {
