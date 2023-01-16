@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   button {
-    font-size: 1.2rem;
+    font-size: 1rem;
     background: inherit;
     border: 0;
     color: ${({ theme }) => theme.colors.text};

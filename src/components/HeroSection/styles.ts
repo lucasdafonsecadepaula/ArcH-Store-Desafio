@@ -31,7 +31,7 @@ export const Box = styled.div`
   .text button {
     cursor: pointer;
     padding: 1rem;
-    font-size: 1.2rem;
+    font-size: 1rem;
     background-color: ${({ theme }) => theme.colors.primary};
     color: #fff;
     border-radius: 8px;

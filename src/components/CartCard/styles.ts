@@ -41,7 +41,7 @@ export const InfoWrapper = styled.div`
     gap: 1rem;
 
     h3 {
-      font-size: 1.2rem;
+      font-size: 1rem;
     }
     p {
       font-size: 1rem;
@@ -51,7 +51,7 @@ export const InfoWrapper = styled.div`
   .price {
     text-align: right;
     span {
-      font-size: 1.2rem;
+      font-size: 1rem;
       font-weight: bold;
       align-self: flex-end;
     }
@@ -70,7 +70,7 @@ export const EditorWrapper = styled.div`
   position: relative;
 
   span {
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
 
   div {
@@ -83,7 +83,7 @@ export const EditorWrapper = styled.div`
 type ButtonProps = { isDisabled?: boolean };
 
 export const EditBtn = styled.button<ButtonProps>`
-  font-size: 1.2rem;
+  font-size: 1rem;
   border: none;
   background: ${({ theme }) => theme.colors.tertiary};
   color: ${({ theme }) => (theme.title === 'dark' ? '#FFF' : '#000')};

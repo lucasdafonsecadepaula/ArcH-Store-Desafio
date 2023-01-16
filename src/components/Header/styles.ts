@@ -94,7 +94,7 @@ export const CartButton = styled.button`
     right: -10px;
     background-color: ${({ theme }) => theme.colors.primary};
     border-radius: 50%;
-    font-size: 1.2rem;
+    font-size: 1rem;
     height: 1.5rem;
     width: 1.5rem;
     display: flex;
@@ -110,7 +110,7 @@ export const LoginButton = styled.div`
 
   a {
     color: ${({ theme }) => theme.colors.text};
-    font-size: 1.2rem;
+    font-size: 1rem;
     text-decoration: none;
   }
 `;
@@ -143,7 +143,7 @@ export const MobileMenuWrapper = styled.div`
   }
 
   ul {
-    font-size: 1.3rem;
+    font-size: 1rem;
     text-align: center;
     display: flex;
     flex-direction: column;

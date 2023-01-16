@@ -5,7 +5,7 @@ export const Container = styled.div`
   background-color: ${({ theme }) => theme.colors.background};
   color: ${({ theme }) => theme.colors.text};
   border-radius: 8px;
-  font-size: 1.2rem;
+  font-size: 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -26,7 +26,7 @@ export const Container = styled.div`
 
   input {
     width: 100%;
-    font-size: 1.2rem;
+    font-size: 1rem;
     margin-top: 0.5rem;
     border-radius: 8px;
 

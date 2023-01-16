@@ -43,12 +43,12 @@ export const EmptyCartContainer = styled.div`
 
   h3 {
     color: ${({ theme }) => theme.colors.text};
-    font-size: 2.2rem;
+    font-size: 2rem;
   }
 
   button {
     margin-top: 2rem;
-    font-size: 1.2rem;
+    font-size: 1rem;
     padding: 1rem 2rem;
     border-radius: 8px;
   }

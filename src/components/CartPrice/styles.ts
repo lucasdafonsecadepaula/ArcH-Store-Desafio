@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const Container = styled.div`
   color: ${({ theme }) => theme.colors.text};
   width: 100%;
-  font-size: 1.2rem;
+  font-size: 1rem;
   display: flex;
   flex-direction: column;
   gap: 1rem;
